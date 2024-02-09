@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             _imageBanner(),
-            _textFieldUsername(),
+            _textFieldEmail(),
             _textFieldPassword(),
             _button(),
             _registro()
@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _textFieldUsername() {
+  Widget _textFieldEmail() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
       height: MediaQuery
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
         initialValue: "",
         onChanged: (value) {},
         error: "",
-        label: 'Coloque aquí su nombre de usuario.',
+        label: 'Coloque aquí su email.',
         icon: Icon(
           Icons.person_outline,
         ),
@@ -113,8 +113,6 @@ class _LoginPageState extends State<LoginPage> {
           _controller.login();
         },
       ),
-
-
     );
   }
 

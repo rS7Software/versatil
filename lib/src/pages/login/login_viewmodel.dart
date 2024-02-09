@@ -10,12 +10,12 @@ class LoginViewModel extends ChangeNotifier {
 
   LoginViewModel();
 
-  void changeUsername(String value) {
+  void changeEmail(String value) {
     if (value.length >= 4) {
-      _state = _state.copyWith(username: ValidationItem(value: value, error: ''));
+      _state = _state.copyWith(email: ValidationItem(value: value, error: ''));
     }
     else {
-      _state = _state.copyWith(username: ValidationItem(error:'3 caracteres min.'));
+      _state = _state.copyWith(email: ValidationItem(error:'3 caracteres min.'));
     }
     notifyListeners();
   }
@@ -31,9 +31,9 @@ class LoginViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void processing(String username, String password, String accion) {
+  void processing(String email, String password, String accion) {
     _state = _state.copyWith(
-        username: ValidationItem(value: password),
+        email: ValidationItem(value: password),
         password: ValidationItem(value: password),
         accion: accion
     );
